@@ -16,7 +16,7 @@ Player -< Combat(Rounds) >- Monster >- levels
 ## MVP
 Player can Create user name
 Game will refer to player by user name
-Display STATS
+<done> Display STATS
 Shows damage taken and remaining HP
 Player can pick from 3 attacks during combat
 Player choice will be compared to monster choice(RNG)

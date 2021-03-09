@@ -3,12 +3,12 @@ Monster.destroy_all
 Player.destroy_all
 Round.destroy_all
 
-ruby = Player.create(name: "Ruby Da Cherry", lvl: 1, exp: 0, hp: 5, rubees: 0)
+plr1 = Player.create(name: "Ruby Da Cherry", lvl: 1, exp: 0, hp: 5, rubees: 0)
 
-wally = Level.create(name: "Wally World")
+lvl1 = Level.create(name: "Wally World")
 
-goblin = Monster.create(name: "Goblin", exp: 3, hp: 1, level_id: test_l.id)
+mon1 = Monster.create(name: "Goblin", exp: 3, hp: 1, level_id: lvl_1.id)
 
-combat = Round.create( player_id: test_p.id, monster_id: test_m.id)
+ro1 = Round.create( player_id: plr1.id, monster_id: mon1.id)
 
 
