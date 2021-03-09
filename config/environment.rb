@@ -1,6 +1,5 @@
 require 'rake'
-require 'active_record'
-# require 'yaml/store'
+require 'yaml/store'
 require 'require_all'
 require 'sqlite3'
 
@@ -12,4 +11,4 @@ ActiveRecord::Base.establish_connection(
     database: 'db/migrate/development.db'
 )
 
-require_all 'app'
+require_all 'app/models'
