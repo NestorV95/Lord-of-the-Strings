@@ -1,0 +1,80 @@
+# CLI RPG App (name TBD)
+
+# Turn based RPG with rock papper scizzors combat mechanic
+
+## Models
+
+* Levels
+* Player (Lvl, XP, HP)
+* Combat(Rounds)
+* Monsters
+
+## Relationships
+
+Player -< Combat(Rounds) >- Monster >- levels
+
+## MVP
+Player can Create user name
+Game will refer to player by user name
+Display STATS
+Shows damage taken and remaining HP
+Player can pick from 3 attacks during combat
+Player choice will be compared to monster choice(RNG)
+Outcome decided accordingly. 
+Player Stats will increase or decrease depending on outcome
+Combat method loops until either player or monster HP hits 0
+Player fights Boss after clearing Monsters
+Some Sort of progress saving feature
+Game Over if player HP hits 0
+Ending if Player beats final stage
+atleast 1 full playable stage
+keep track of Rounds
+keep track of inventory
+When in 
+
+
+
+## Stretch Goals(easy)
+Visuals (ASCII/ARTII text art or better)
+Colorizations (for improved visuals)
+Multiple full playable stages
+Story driven plot
+
+## Stretch Goals (hard)
+* Sound effects for combat (requires methods to control timing and volume)
+* Music during combat(requires methods to control durations and volume)
+Create leveling system to increase HP and abilities based on LVL
+minor options to personalize experience(possibly another model)
+(EX. randomized instances(RNG to trigger), good outcome = buff and bad outcome = debuff
+
+
+─────────────────────────────
+────────▄████████████▄───────
+──────█████████████████▌─────
+─────███████████████████▄────
+────▐██░░░░░░░░░░░░░█████────
+────██░░░░░░░░░░░░░░░█████───
+────█░░░█░░░░░░░░█░░░░██░█───
+────█░░░░░░░░░░░░░░░░░█░░█───
+─────█░░░░░░░░░░░░░░░░░░██───
+─────█░░░░██████░░░░░░░█─────
+──────█░░░░░░░░░░░░░░██──────
+───────██░░░░░░░░░░██────────
+───████▒▒██████████▒▒█████───
+──█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█──
+─█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█─
+─█▒▒█▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒█▒▒█─
+─█▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒█─
+─█▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒█─
+─█▒▒▒█▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒█▒▒▒█─
+─█▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒█─
+─█▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒█─
+─█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█████─
+─█░░░███████████████████░░░█─
+──█░░█░░░░░░░░░░░░░░░░░█░░█──
+───████░░░░░░░█░░░░░░░████───
+──────█░░░░░░░█░░░░░░░█──────
+───────█░░░░░█─█░░░░░█───────
+────────█░░░█───█░░░█────────
+──────███████───███████──────
+─────────────────────────────
