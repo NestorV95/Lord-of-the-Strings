@@ -1,4 +1,4 @@
-#require 'rake'
+require 'rake'
 require 'yaml/store'
 require 'require_all'
 require 'sqlite3'

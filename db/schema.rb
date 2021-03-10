@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_161535) do
+ActiveRecord::Schema.define(version: 2021_03_10_214612) do
 
   create_table "levels", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_03_09_161535) do
     t.integer "exp"
     t.integer "hp"
     t.integer "level_id"
+    t.integer "max_hp"
+    t.string "attack"
   end
 
   create_table "players", force: :cascade do |t|
@@ -29,6 +31,8 @@ ActiveRecord::Schema.define(version: 2021_03_09_161535) do
     t.integer "exp"
     t.integer "hp"
     t.integer "rubees"
+    t.integer "max_hp"
+    t.string "attack"
   end
 
   create_table "rounds", force: :cascade do |t|
