@@ -1,4 +1,4 @@
-require "pry"
+#require "pry"
 
 class Player < ActiveRecord::Base
     has_many :rounds
@@ -9,7 +9,7 @@ class Player < ActiveRecord::Base
     
     
 end
- player = Player.find_by(name: "Ruby Da Cherry")     
+ #player = Player.find_by(name: "Ruby Da Cherry")     
 
-# binding.pry
-# 0
+ #binding.pry
+ #0
