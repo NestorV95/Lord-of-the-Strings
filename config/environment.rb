@@ -2,6 +2,7 @@ require 'rake'
 require 'yaml/store'
 require 'require_all'
 require 'sqlite3'
+require 'artii'
 
 require 'bundler/setup'
 Bundler.require
@@ -12,5 +13,6 @@ ActiveRecord::Base.establish_connection(
 )
 
 require_all 'app/models'
+require_all 'app'
 
 
