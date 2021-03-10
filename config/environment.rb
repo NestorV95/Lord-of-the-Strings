@@ -1,4 +1,4 @@
-require 'rake'
+#require 'rake'
 require 'yaml/store'
 require 'require_all'
 require 'sqlite3'
@@ -12,5 +12,5 @@ ActiveRecord::Base.establish_connection(
 )
 
 require_all 'app/models'
-
+require_all 'app'
 
