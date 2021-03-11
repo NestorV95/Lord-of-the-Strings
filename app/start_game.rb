@@ -1,17 +1,14 @@
-def player #works:retrieves our specific player object
-    player = Player.find(3)
+def default_player 
+    {:name=> "no name", :lvl=> 1, :exp=> 0, :hp=> 5, :rubees=> 0, :max_hp=> 5, :attack=> "none"}
 end
 
-def default_attributes #works: helper method fo default_player
-    {:name => "no name", :lvl => 1, :exp => 0, :hp => 5, :rubees => 0}
+def default_monster #works: run this at start of new game to wipe player stats.
+    {:name=> "goblin", :exp=> 3, hp: 1, level_id: t_level.id, max_hp: 1, attack: "Punch"}
 end
 
-def default_player #works: run this at start of new game to wipe player stats.
-    Player.update(3, default_attributes)
-end
-
-def change_name(name) #works: changes name of our player object
-    Player.update(3, name: name)
+def change_name(new_name) #works: changes name of our player object
+    $player.name = new_name
+    $player.save
 end
 
 def who_are_you? #works: prompts player for name. name: = input
@@ -20,35 +17,57 @@ def who_are_you? #works: prompts player for name. name: = input
     change_name(name)
 end
 
-def player_name #works: retrieves our player_name
-    player.name
+def change_attack(attk) #works: helper method: updates player "attack"
+    $player.attack = attk
+    $player.save
 end
 
-def player_choice
-    attacks = player.attacks.map {|attack| attack }
+def player_choice #works: calls helper method to update player "attack"
+    attk_choices = $player.attacks.map{|attack| attack}
     prompt = TTY::Prompt.new
-    attack_choice = prompt.select("Choose An Attack:", attacks)
-    player_attack = attack_choice
-    puts "You Try To #{attack_choice} Your Opponent..."
+    attk = prompt.select("Choose An Attack:", attk_choices)
+    change_attack(attk)
+    puts "You Try To #{attk} Your Opponent..."
 end
 
-def enemy_choice
-    attack = player.attacks.sample
-    puts "Your Opponent Tries To #{attack} You..."
+def change_enemy_attack(enemy, attk) #works: changes enemy attack attr
+    Monster.update(enemy.id, attack: attk)
 end
 
-def exchange_attacks
-    pa = player_attack
-    ea = enemy_attack
+def enemy_choice(enemy) #works: calls helper method to assign RNG attack 
+    attk = enemy.rng_attack
+    change_enemy_attack(enemy, attk)
+    puts "Your Opponent Tries To #{attk} You..."
+end
+
+def exchange_attacks(enemy) #works: Compares player and enemy attacks
+    pa = $player.attack
+    ea = enemy.attack
     if (pa == 'Punch' && ea == 'Kick')||(pa == 'Kick' && ea == 'Grapple')||(pa == 'Grapple' && ea == 'Punch')
         puts "Their Attack Lands!"
-            #player.take_dmg(1)
+            $player.take_dmg(1)
+            $player.display_hp
     elsif (pa == 'Punch' && ea == 'Grapple')||(pa == 'Kick' && ea == 'Punch')||(pa == 'Grapple' && ea == 'Kick') 
         puts "Your Attack Lands!"
-            #enemy.take_dmg(1)
+            enemy.take_dmg(1)
     else
        puts "You Two Are Evenly Matched!"
     end
+end
+
+def throwing_hands(enemy) #works: calls 3 helper methods and loops until 1 combatant is "dead"
+    while $player.alive? && enemy.alive?  #also increases player stats if player still "alive"
+        player_choice
+        enemy_choice(enemy)
+        exchange_attacks(enemy)
+    end
+        if $player.alive?
+            $player.gain_exp(enemy.exp)
+            $player.get_paid(enemy.exp)
+            puts "You Defeated #{enemy.name}!"
+        else
+            puts "insert Game Over Method Goes Here" #needs a GAME OVER screen 
+        end
 end
 
 

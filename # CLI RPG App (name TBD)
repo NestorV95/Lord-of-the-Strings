@@ -16,21 +16,18 @@ Player -< Combat(Rounds) >- Monster >- levels
 ## MVP
 <done> Player can customize player name
 <done> Game will refer to player by user name
-<done> Display STATS
+Display STATS
 Shows damage taken and remaining HP
 <done> Player can pick from 3 attacks during combat
-Player choice will be compared to monster choice(RNG)
-Outcome decided accordingly. 
-Player Stats will increase or decrease depending on outcome
-Combat method loops until either player or monster HP hits 0
+<done> Player choice will be compared to monster choice(RNG)
+<done> Outcome decided accordingly. 
+<done> Player Stats will increase or decrease depending on outcome
+<done> Combat method loops until either player or monster HP hits 0
 Player fights Boss after clearing Monsters
-Some Sort of progress saving feature
-Game Over if player HP hits 0
+<done> Game Over if player HP hits 0
 Ending if Player beats final stage
 atleast 1 full playable stage
 keep track of Rounds
-keep track of inventory
-When in 
 
 
 
