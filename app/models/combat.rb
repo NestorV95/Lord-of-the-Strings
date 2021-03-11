@@ -1,16 +1,17 @@
 module Combat
-
     module CombatInstances #these module instances are for players and monsters to "fight"
 
         def attacks     #works: array of attacks
             attacks = ['Punch', 'Kick', 'Grapple']
         end
+
         def rng_attack   #works: Generates a random attack
-            attacks.sample(1)
+            attk = attacks.each{|str| str}.sample
+            self.attack = attk
         end      
 
         def hp_range #works: sets up hp range 
-            self.hp = self.hp.clamp(0, 5)   #would be more abstract if players and monsters had a "max_hp" attribute.
+            self.hp = self.hp.clamp(0, self.max_hp)   #Update: max_hp added for abstraction purposes.
         end
 
         def alive?   #works: returns true if hp > 0 and false otherwise
@@ -25,18 +26,24 @@ module Combat
             self.hp += (n) ; self.hp_range
         end
 
-        def gain_exp(mon_exp) #works: player capable of gaining exp.
-            self.exp += mon_exp #mon_exp is where we would plug in monster instance exp attr value
+        def gain_exp(mon_exp) #works: player gain exp = monster.exp
+            tot_exp = $player.exp += mon_exp #mon_exp is where we would plug in monster instance exp attr value
+            Player.update($player.id, exp: tot_exp)
         end
 
-        def get_paid(n)    #works:player capable of gaining schmoney
-            self.rubees +=(n) 
+        def get_paid(mon_exp)    #works: RNG decides how much $ player gets.
+            tot_rub = ($player.lvl * mon_exp * $player.max_hp)/rand(1..3)
+            Player.update($player.id, rubees: tot_rub)
         end
 
-        def stats     #works: displays LVL, EXP & HP
+        def display_hp 
+            "HP:  #{self.hp} / #{self.max_hp}\n"
+        end
+
+        def stats     #works: displays LVL, EXP & HP 
             p "LVL: #{self.lvl}\n"
             p "EXP: #{self.exp}\n"
-            p "HP:  #{self.hp} / 5 \n" #need max_hp attr to make this more abstract.
+            p "HP:  #{self.hp} / #{self.max_hp} \n"  #Update: max_hp added for abstraction purposes.
         end
         
     end
