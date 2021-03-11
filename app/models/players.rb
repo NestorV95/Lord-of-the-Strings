@@ -38,7 +38,8 @@ class Player < ActiveRecord::Base
     end
     
 end
- #player = Player.find_by(name: "Ruby Da Cherry")     
+
+    $player = Player.new(:name=> "no name", :lvl=> 1, :exp=> 0, :hp=> 5, :rubees=> 0, :max_hp=> 5, :attack=> "Punch")  
 
  #binding.pry
  #0

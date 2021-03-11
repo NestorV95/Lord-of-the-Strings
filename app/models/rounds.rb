@@ -62,7 +62,17 @@ class Round < ActiveRecord::Base
             player.get_paid(enemy.exp)
             puts "You Defeated #{enemy.name}!"
         else
-            puts "insert Game Over Method Goes Here" #needs a GAME OVER screen 
+            game_over 
         end
     end
 end
+
+$round_1 = Round.new(player_id: $player.id, monster_id: $enemy_1.id)
+$round_2 = Round.new(player_id: $player.id, monster_id: $enemy_2.id)
+$round_3 = Round.new(player_id: $player.id, monster_id: $enemy_3.id)
+$round_4 = Round.new(player_id: $player.id, monster_id: $enemy_4.id)
+$round_5 = Round.new(player_id: $player.id, monster_id: $enemy_5.id)
+$round_6 = Round.new(player_id: $player.id, monster_id: $enemy_6.id)
+$round_7 = Round.new(player_id: $player.id, monster_id: $enemy_7.id)
+$round_8 = Round.new(player_id: $player.id, monster_id: $enemy_8.id)
+$round_9 = Round.new(player_id: $player.id, monster_id: $enemy_9.id)

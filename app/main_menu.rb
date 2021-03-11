@@ -71,10 +71,7 @@ def main_menu
     prompt = TTY::Prompt.new
     hs_choice = prompt.select("What would you like to do?", ["Start Game","How To Play", "Credits", "Exit"])
     if (hs_choice == "Start Game")
-        #method for dialouge and cut possibly image
-        #player_name = prompt.ask("What is your name?")
-        #method for the game
-        puts "this will start our game"
+        story_mode
     elsif (hs_choice == "How To Play")
         how_to_play    
     elsif (hs_choice == "Credits")
