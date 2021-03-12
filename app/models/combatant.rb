@@ -23,12 +23,10 @@ module Combatant
             self.hp -= (n) ; self.hp_range
         end
 
-        def heal(n)  #works: & hp can only reach 5. 
+        def heal(n)  #works: 
             self.hp += (n) ; self.hp_range
         end
  
     end
 
 end
-
-

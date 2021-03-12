@@ -1,10 +1,4 @@
 require_relative "config/environment.rb"
 
- require "pry"
-
-game_over
-
-
-binding.pry
-0
-
+title_flash
+main_menu

@@ -27,14 +27,8 @@ class Player < ActiveRecord::Base
         Player.update(self.id, rubees: tot_rub)
     end
 
-    def stats     #works: displays LVL, EXP & HP 
-        p "LVL: #{self.lvl}\n"
-        p "EXP: #{self.exp}\n"
-        p "HP:  #{self.hp} / #{self.max_hp} \n"  #Update: max_hp added for abstraction purposes.
-    end
-
     def display_hp 
-        "HP:  #{self.hp} / #{self.max_hp}\n"
+        puts "HP:  #{self.hp} / #{self.max_hp}\n"
     end
     
 end

@@ -16,26 +16,26 @@ Player -< Combat(Rounds) >- Monster >- levels
 ## MVP
 <done> Player can customize player name
 <done> Game will refer to player by user name
-Display STATS
-Shows damage taken and remaining HP
+<done> Display STATS
+<done> Shows damage taken and remaining HP
 <done> Player can pick from 3 attacks during combat
 <done> Player choice will be compared to monster choice(RNG)
 <done> Outcome decided accordingly. 
 <done> Player Stats will increase or decrease depending on outcome
 <done> Combat method loops until either player or monster HP hits 0
-Player fights Boss after clearing Monsters
+<done> Player fights Boss after clearing Monsters
 <done> Game Over if player HP hits 0
-Ending if Player beats final stage
-atleast 1 full playable stage
-keep track of Rounds
+<done> Ending if Player beats final stage
+<done> atleast 1 full playable stage
+<done> keep track of Rounds
 
 
 
 ## Stretch Goals(easy)
-Visuals (ASCII/ARTII text art or better)
+<done> Visuals (ASCII/ARTII text art or better) (kind of)
 Colorizations (for improved visuals)
-Multiple full playable stages
-Story driven plot
+<done> Multiple full playable stages
+<done> Story driven plot
 
 ## Stretch Goals (hard)
 * Sound effects for combat (requires methods to control timing and volume)
@@ -43,35 +43,3 @@ Story driven plot
 Create leveling system to increase HP and abilities based on LVL
 minor options to personalize experience(possibly another model)
 (EX. randomized instances(RNG to trigger), good outcome = buff and bad outcome = debuff
-
-
-─────────────────────────────
-────────▄████████████▄───────
-──────█████████████████▌─────
-─────███████████████████▄────
-────▐██░░░░░░░░░░░░░█████────
-────██░░░░░░░░░░░░░░░█████───
-────█░░░█░░░░░░░░█░░░░██░█───
-────█░░░░░░░░░░░░░░░░░█░░█───
-─────█░░░░░░░░░░░░░░░░░░██───
-─────█░░░░██████░░░░░░░█─────
-──────█░░░░░░░░░░░░░░██──────
-───────██░░░░░░░░░░██────────
-───████▒▒██████████▒▒█████───
-──█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█──
-─█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█─
-─█▒▒█▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒█▒▒█─
-─█▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒█─
-─█▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒█─
-─█▒▒▒█▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒█▒▒▒█─
-─█▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒█─
-─█▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒█─
-─█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█████─
-─█░░░███████████████████░░░█─
-──█░░█░░░░░░░░░░░░░░░░░█░░█──
-───████░░░░░░░█░░░░░░░████───
-──────█░░░░░░░█░░░░░░░█──────
-───────█░░░░░█─█░░░░░█───────
-────────█░░░█───█░░░█────────
-──────███████───███████──────
-─────────────────────────────
