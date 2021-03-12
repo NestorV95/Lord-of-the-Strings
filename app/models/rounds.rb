@@ -1,34 +1,37 @@
 class Round < ActiveRecord::Base
     belongs_to :player
     belongs_to :monster
-    
+
     def exchange_attacks(player, enemy) #works: Compares player and enemy attacks
         system 'clear'
-        puts "\n" * 50
+        enemy_art
         player.display_hp
         pa = player.attack
         ea = enemy.attack
         if (pa == 'Punch' && ea == 'Kick')||(pa == 'Kick' && ea == 'Grapple')||(pa == 'Grapple' && ea == 'Punch')
             system 'clear'
-            puts "\n" * 50
+            enemy_art
             player.take_dmg(1)
             player.display_hp
             puts "Their Attack Lands!"
-            continue?
+            sleep 3
         elsif (pa == 'Punch' && ea == 'Grapple')||(pa == 'Kick' && ea == 'Punch')||(pa == 'Grapple' && ea == 'Kick')
+            system 'clear'
+            enemy_hit
             puts "Your Attack Lands!"
             enemy.take_dmg(1)
-            continue?
+            sleep 3
         else
             puts "You Two Are Evenly Matched!"
-            continue?
+            sleep 3
         end
     end
 
     def throwing_hands(player, enemy) #works: calls 3 helper methods and loops until 1 combatant is "dead"
         while player.alive? && enemy.alive?  #also increases player stats if player still "alive"
             system 'clear'
-            puts "\n" * 50
+            puts "\n" * 10
+            enemy_art
             player.display_hp
             player.player_choice
             enemy.enemy_choice
@@ -36,7 +39,8 @@ class Round < ActiveRecord::Base
         end
         if player.alive?
             system 'clear'
-            puts "\n" * 50
+            puts "\n" * 10
+            enemy_kod
             player.display_hp
             player.gain_exp(enemy.exp)
             player.get_paid(enemy.exp)

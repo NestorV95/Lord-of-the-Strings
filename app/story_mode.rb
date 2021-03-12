@@ -81,6 +81,7 @@ def story_mode
     part_one
     part_two
     part_three
+    congratulations
 end
 
 

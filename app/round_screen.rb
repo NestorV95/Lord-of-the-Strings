@@ -129,11 +129,10 @@ def lvl2_screen
     sleep 5
 end
 
-def lvl2_screen
+def lvl3_screen
     system 'clear'
     puts "\n" * 20
     lvl3_title
     puts "\n" * 20
     sleep 5
 end
-
