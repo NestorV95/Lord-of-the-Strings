@@ -40,7 +40,7 @@ def credits
    puts "\n"
    puts "\n" * 9
    prompt = TTY::Prompt.new
-   prompt.select("                                                                                   Return To Main Menu?", ["Yes!"])
+   prompt.select("", ["Return To Main Menu"])
    main_menu
 end
 
@@ -59,7 +59,7 @@ def how_to_play
     puts "                                                           Will Be Decided in a 'Rock Paper Scizzors' Style Combat System.\n"
     puts "\n" * 10
     prompt = TTY::Prompt.new
-    prompt.select("                                                                                   Return To Main Menu?", ["Yes!"])
+    prompt.select(" ", ["Return To Main Menu"])
     main_menu
 end
 

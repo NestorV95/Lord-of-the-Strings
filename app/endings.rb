@@ -29,6 +29,7 @@ def congratulations
     congrats_title
     puts "                                  Thank You For Playing Our Game, We Hope You Liked It Unfortanetly This IS As Far As We Got. Check Back Soon For More Updates"
     puts "\n" * 20
+    prompt = TTY::Prompt.new
     congrats_choice = prompt.select(" ", ["Play Again", "Main Menu", "Credits", "Exit"])
     if (congrats_choice == "Play Again")
         story_mode
