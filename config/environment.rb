@@ -12,6 +12,4 @@ ActiveRecord::Base.establish_connection(
     database: 'db/migrate/development.db'
 )
 
-# require_all 'app/models'
 require_all 'app'
-
