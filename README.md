@@ -1,5 +1,6 @@
 ## Lord of the Strings - a CLI RPG
-
+    Programmed by Udenna Nebeolisa & Nestor Venegas
+    Demo: https://www.youtube.com/watch?v=zmsyRpRb8kg
 
 ## Description
 
